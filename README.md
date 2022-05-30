@@ -16,9 +16,10 @@ instalar el composer.
 composer install
 
 ```
-
+3. restaurar y conectarce a la base de datos desde el archivo .env
 # Para ver el endpoint api 
 http://127.0.0.1:8000/api/advedise/order/C001
 
 # Para ver la vista
 http://127.0.0.1:8000/asesor
+
