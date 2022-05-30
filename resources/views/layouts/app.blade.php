@@ -1,7 +1,7 @@
 @include('layouts.header')
 
 
-    @livewire('product-live')
+    @livewire('advise-live')
 
 @include('layouts.footer')
 

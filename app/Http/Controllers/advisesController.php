@@ -18,8 +18,16 @@ class advisesController extends Controller
     //obtiene la informacion de los asesores y los clientes asignados y
     //los pedidos de los clientes con sus respectivos productos
     public function get_data(){
-        $obj = new \stdClass();
 
+        // $obj->clientes=[]
+        $obj = $this->process_data();
+
+        return response()->json([$obj]);
+
+    }
+
+    public function process_data(){
+        $obj = new \stdClass();
         $a = advise::where('id_advise',1)->first();
         $obj->codigo_asesor = $a->codigo_asesor;
         $obj->name = $a->name;
@@ -61,11 +69,7 @@ class advisesController extends Controller
             array_push($obj->clientes,$cliente_obj);
         }
         $obj->total_pedidos=$tota_pedidos_global;
-        // $obj->clientes=[];
-
-
-        return response()->json([$obj]);
-
+        return $obj;
     }
 
 
