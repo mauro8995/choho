@@ -17,18 +17,34 @@ class advisesController extends Controller
 {
     //obtiene la informacion de los asesores y los clientes asignados y
     //los pedidos de los clientes con sus respectivos productos
-    public function get_data(){
+    public function get_data($codigo_asesor){
 
         // $obj->clientes=[]
-        $obj = $this->process_data();
+        $obj = $this->process_data($codigo_asesor);
+        if($obj){
+            return response()->json([$obj]);//Si encuetra en asesor envia la respuesta
+        }
 
-        return response()->json([$obj]);
+        else{
+            return response()->json(["messaje"=>"no se encontro el asesor"],404);//en caso que no envia como recurso no encontrado
+        }
+
 
     }
 
-    public function process_data(){
+
+    //arma la entrucura  array
+    public function process_data(string $codigo_asesor){
+
+        if(advise::where('codigo_asesor',$codigo_asesor)->exists()){
+
+        }else{
+            return false;
+        }
         $obj = new \stdClass();
-        $a = advise::where('id_advise',1)->first();
+
+        $a = advise::where('codigo_asesor',$codigo_asesor)->first();
+
         $obj->codigo_asesor = $a->codigo_asesor;
         $obj->name = $a->name;
         $cliente = client::where('id_advise',$a->id_advise)->get();

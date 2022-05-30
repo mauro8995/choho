@@ -19,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('product', ProductLive::class);
-Route::get('order', OrderLive::class);
+// Route::get('product', ProductLive::class);
+Route::get('asesor', OrderLive::class);
