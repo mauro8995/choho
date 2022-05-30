@@ -17,6 +17,8 @@ composer install
 
 ```
 3. restaurar y conectarse a la base de datos desde el archivo .env
+la base de datos esta en la carpeta database se llama choho.backup 
+
 # Para ver el endpoint api 
 http://127.0.0.1:8000/api/advedise/order/C001
 
