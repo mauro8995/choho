@@ -1,4 +1,7 @@
 # choho
+Proyecto echo en laravel 8 
+el archivo del codigo esta en app/http/controllers/advisesController
+
 Requerimientos minimos.
  - Servidor local Xampp con la versión 7.3 de PHP como mínimo.
  - La última versión de Composer.
@@ -18,6 +21,12 @@ composer install
 ```
 3. restaurar y conectarse a la base de datos desde el archivo .env
 la base de datos esta en la carpeta database se llama choho.backup 
+
+iniciar el servidor
+```
+php artisan serve
+
+``` 
 
 # Para ver el endpoint api 
 http://127.0.0.1:8000/api/advedise/order/C001
