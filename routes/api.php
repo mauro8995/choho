@@ -31,8 +31,6 @@ Route::middleware([apiAccess::class])->group(function () {
     *- La lista de pedidos que tienen cada asesor, con el detalle de cada
     *pedido: Producto, cantidad, valor unitario, monto total del pedido,
     *estado y fecha de pago.
-     * el parametro de entrada es el codigo del asesor
-     * @example. "C001" o "C002"
      *
      */
 Route::get('advedise/order', [advisesController::class, 'get_data']);
