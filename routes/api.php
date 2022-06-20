@@ -19,4 +19,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('advedise/order/{codigo_asesor}', [advisesController::class, 'get_data']);
+use App\Http\Middleware\apiAccess;
+
+Route::middleware([apiAccess::class])->group(function () {
+
+
+     /**
+    *  endpoint información de los asesores
+    *Los asesores con el número total de clientes asignados y cuantos
+    *pedidos tiene cada cliente.
+    *- La lista de pedidos que tienen cada asesor, con el detalle de cada
+    *pedido: Producto, cantidad, valor unitario, monto total del pedido,
+    *estado y fecha de pago.
+     * el parametro de entrada es el codigo del asesor
+     * @example. "C001" o "C002"
+     *
+     */
+Route::get('advedise/order', [advisesController::class, 'get_data']);
+
+
+});
+

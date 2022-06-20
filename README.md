@@ -1,6 +1,7 @@
 # choho
 Proyecto echo en laravel 8 
 el archivo del codigo esta en app/http/controllers/advisesController
+- la documentacion esta adjunto en el correo(documentacion API y la documentacion codigo).
 
 Requerimientos minimos.
  - Servidor local Xampp con la versión 7.3 de PHP como mínimo.
@@ -29,8 +30,6 @@ php artisan serve
 ``` 
 
 # Para ver el endpoint api 
-http://127.0.0.1:8000/api/advedise/order/C001
+http://127.0.0.1:8000/api/advedise/order
 
-# Para ver la vista
-http://127.0.0.1:8000/asesor
 
